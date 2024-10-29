@@ -29,5 +29,31 @@ grafo.agregar_nodo("Suchitepéquez")
 #nodo a y nodo b, y kilometros en enteros
 #grafo.agregar_rama("Guatemala","Chimaltenango",000000)
 
+#Ramas 0-4 Andre 
+#ciudad Capital
+grafo.agregar_rama("Guatemala", "El Progreso", 80)
+grafo.agregar_rama("Guatemala", "Baja Verapaz", 120)
+grafo.agregar_rama("Guatemala", "Jalapa", 100)
+grafo.agregar_rama("Guatemala", "Escuintla", 60)
+grafo.agregar_rama("Guatemala", "Santa Rosa", 75)
+grafo.agregar_rama("Guatemala", "Sacatepéquez", 54)
+grafo.agregar_rama("Guatemala", "Chimaltenango", 52)
 
+#Chimaltenango 
+grafo.agregar_rama("Chimaltenango", "Quiché", 110)
+grafo.agregar_rama("Chimaltenango", "Baja Verapaz", 130)
+grafo.agregar_rama("Chimaltenango", "Sacatepéquez", 54)
+grafo.agregar_rama("Chimaltenango", "Escuintla", 53)
+grafo.agregar_rama("Chimaltenango", "Suchitepéquez", 128)
+grafo.agregar_rama("Chimaltenango", "Sololá", 86)
 
+#Sacatepéquez
+grafo.agregar_rama("Sacatepéquez", "Escuintla", 37)
+
+#Escuintla
+grafo.agregar_rama("Escuintla", "Santa Rosa", 89)
+grafo.agregar_rama("Escuintla", "Suchitepéquez", 70)
+
+#Santa Rosa
+grafo.agregar_rama("Santa Rosa", "Jutiapa", 70)
+grafo.agregar_rama("Santa Rosa", "Jalapa", 110)
