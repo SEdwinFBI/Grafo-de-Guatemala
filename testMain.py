@@ -1,6 +1,6 @@
-import Grafica
+import Grafica as Grap
 
-grafo = Grafica.Grafica()
+grafo = Grap.Grafica()
 
 
 grafo.agregar_nodo("Guatemala")
@@ -64,5 +64,5 @@ grafo.agregar_rama("Retalhuleu", "Suchitepéquez", 100)
 
 
 
-grafo.recorrer_grafo("Totonicapán","Suchitepéquez")
+grafo.recorrer_grafo("San Marcos","Suchitepéquez")
 
