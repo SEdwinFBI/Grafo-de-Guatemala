@@ -1,6 +1,6 @@
-import Grafica
+import Grafica as Grap
 
-grafo = Grafica.Grafica()
+grafo = Grap.Grafica()
 
 
 grafo.agregar_nodo("Guatemala")
@@ -29,5 +29,5 @@ grafo.agregar_nodo("Suchitepéquez")
 #nodo a y nodo b, y kilometros en enteros
 #grafo.agregar_rama("Guatemala","Chimaltenango",000000)
 
-grafo.recorrer_grafo("Totonicapán","Suchitepéquez")
+
 

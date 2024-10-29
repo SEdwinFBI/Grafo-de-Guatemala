@@ -1,5 +1,5 @@
 #librerias
-import networkx 
+import networkx
 import matplotlib.pyplot as pyplot 
 #clases
 import Nodo
