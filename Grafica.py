@@ -34,29 +34,30 @@ class Grafica():
         
         }
         self.posiciones = {
-            "Guatemala": (3, 8.5),
-            "Chimaltenango": (2.5, 7.5),
-            "Sacatepéquez": (2.8, 7.2),
-            "Escuintla": (3, 6.5),
-            "Santa Rosa": (4.5, 6),
-            "Jutiapa": (6, 6),
-            "Chiquimula": (6.5, 7),
-            "Jalapa": (5.5, 7),
-            "El Progreso": (4.8, 7.5),
-            "Zacapa": (6, 8),
-            "Izabal": (7.5, 8.5),
-            "Petén": (7.8, 10),
-            "Alta Verapaz": (5.5, 8.5),
-            "Baja Verapaz": (4.5, 8.5),
-            "Quiché": (3, 9),
-            "Huehuetenango": (1.8, 8.8),
-            "San Marcos": (1, 7.5),
-            "Quetzaltenango": (1.8, 6.8),
-            "Totonicapán": (2.5, 7.8),
-            "Sololá": (2.8, 7.3),
-            "Retalhuleu": (2.2, 6),
-            "Suchitepéquez": (3.2, 6.2)
+        "Guatemala": (3.8, 8.2),
+        "Chimaltenango": (3.3, 7.8),
+        "Sacatepéquez": (3.5, 7.3),
+        "Escuintla": (3.5, 6.5),
+        "Santa Rosa": (4.5, 6.3),
+        "Jutiapa": (5.7, 5.8),
+        "Chiquimula": (6.8, 6.7),
+        "Jalapa": (5.5, 6.8),
+        "El Progreso": (4.5, 7.5),
+        "Zacapa": (6.3, 7.7),
+        "Izabal": (7.5, 8.7),
+        "Petén": (6.8, 10),
+        "Alta Verapaz": (5.3, 9.2),
+        "Baja Verapaz": (4.5, 8.5),
+        "Quiché": (3.3, 9.1),
+        "Huehuetenango": (2.2, 9),
+        "San Marcos": (1.2, 7.7),
+        "Quetzaltenango": (2.3, 7),
+        "Totonicapán": (2.7, 7.7),
+        "Sololá": (3.1, 7.2),
+        "Retalhuleu": (2.5, 6),
+        "Suchitepéquez": (3.1, 6.3)
         }
+
 
         
     
@@ -142,7 +143,7 @@ class Grafica():
         self.dijkstra(nodo_A)
         camino = self.obtener_camino(nodo_B)
         print("Camino mas corto para llegar del punto A, al punto B",camino[0])
-        print("Kilometros a recorrer",camino[1])
+        print("Kilometros a recorrer",camino[1],"km")
         self.graficar()
         
     
