@@ -60,6 +60,37 @@ grafo.agregar_rama("Santa Rosa", "Jalapa", 110)
 
 
 
+#Ramas 15-21
+#Huehuetenango
+grafo.agregar_rama("Huehuetenango", "Quiché", 140)
+grafo.agregar_rama("Huehuetenango", "Totonicapán", 85)
+grafo.agregar_rama("Huehuetenango", "Quetzaltenango", 70)
+grafo.agregar_rama("Huehuetenango", "San Marcos", 120)
+
+#San Marcos
+grafo.agregar_rama("San Marcos", "Quetzaltenango", 55)
+grafo.agregar_rama("San Marcos", "Retalhuleu", 90)
+
+#Quetzaltenango
+grafo.agregar_rama("Quetzaltenango", "Totonicapán", 25)
+grafo.agregar_rama("Quetzaltenango", "Sololá", 50)
+grafo.agregar_rama("Quetzaltenango", "Retalhuleu", 65)
+grafo.agregar_rama("Quetzaltenango", "Suchitepéquez", 85)
+
+#Totonicapán
+grafo.agregar_rama("Totonicapán", "Quiché", 65)
+grafo.agregar_rama("Totonicapán", "Sololá", 50)
+
+#Sololá
+grafo.agregar_rama("Sololá", "Quiché", 100)
+grafo.agregar_rama("Sololá", "Suchitepéquez", 75)
+
+#Retalhuleu
+grafo.agregar_rama("Retalhuleu", "Suchitepéquez", 45)
+
+#Suchitepequez
+#Pos ya esta conectado en los anteriores jajajja
+
 deparamentoSalida = str(input("Ingrese el departamento de salida: "))
 departamentoLlegada = str(input("Ingrese el departamento de llegada: "))
 
