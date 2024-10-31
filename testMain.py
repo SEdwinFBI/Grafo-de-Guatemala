@@ -57,3 +57,11 @@ grafo.agregar_rama("Escuintla", "Suchitepéquez", 70)
 #Santa Rosa
 grafo.agregar_rama("Santa Rosa", "Jutiapa", 70)
 grafo.agregar_rama("Santa Rosa", "Jalapa", 110)
+
+
+
+deparamentoSalida = str(input("Ingrese el departamento de salida: "))
+departamentoLlegada = str(input("Ingrese el departamento de llegada: "))
+
+
+grafo.recorrer_grafo(deparamentoSalida, departamentoLlegada)
