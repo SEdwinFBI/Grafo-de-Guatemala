@@ -9,72 +9,86 @@ class Grafica():
         self.grafica = networkx.Graph()#grafo no dirigido
         self.nodos:Nodo.Nodo= {}#diccionario 
         self.colores = {
-            "Guatemala": "#FFD700", 
-            "Chimaltenango": "#8A2BE2", 
-            "Sacatepéquez": "#FF6347",
-            "Escuintla": "#87CEEB", 
-            "Santa Rosa": "#FF4500", 
-            "Jutiapa": "#32CD32",
-            "Chiquimula": "#FF1493", 
-            "Jalapa": "#4682B4", 
-            "El Progreso": "#A52A2A",
-            "Zacapa": "#00FA9A",
-            "Izabal": "#9400D3", 
-            "Petén": "#3CB371",
-            "Alta Verapaz": "#20B2AA", 
-            "Baja Verapaz": "#B8860B",
-            "Quiché": "#4B0082",
-            "Huehuetenango": "#DA70D6",
-            "San Marcos": "#7FFF00",
-            "Quetzaltenango": "#D2691E",
-            "Totonicapán": "#FF00FF", 
-            "Sololá": "#1E90FF",
-            "Retalhuleu": "#FF69B4",
-            "Suchitepéquez":"#FF69B4",
-        
-        }
+        "guatemala": "#FFD700", 
+        "chimaltenango": "#8A2BE2", 
+        "sacatepequez": "#FF6347",
+        "escuintla": "#87CEEB", 
+        "santa rosa": "#FF4500", 
+        "jutiapa": "#32CD32",
+        "chiquimula": "#FF1493", 
+        "jalapa": "#4682B4", 
+        "el progreso": "#A52A2A",
+        "zacapa": "#00FA9A",
+        "izabal": "#9400D3", 
+        "peten": "#3CB371",
+        "alta verapaz": "#20B2AA", 
+        "baja verapaz": "#B8860B",
+        "quiche": "#4B0082",
+        "huehuetenango": "#DA70D6",
+        "san marcos": "#7FFF00",
+        "quetzaltenango": "#D2691E",
+        "totonicapan": "#FF00FF", 
+        "solola": "#1E90FF",
+        "retalhuleu": "#FF69B4",
+        "suchitepequez": "#FF69B4",
+    }
+
         self.posiciones = {
-        "Guatemala": (3.8, 8.2),
-        "Chimaltenango": (3.3, 7.8),
-        "Sacatepéquez": (3.5, 7.3),
-        "Escuintla": (3.5, 6.5),
-        "Santa Rosa": (4.5, 6.3),
-        "Jutiapa": (5.7, 5.8),
-        "Chiquimula": (6.8, 6.7),
-        "Jalapa": (5.5, 6.8),
-        "El Progreso": (4.5, 7.5),
-        "Zacapa": (6.3, 7.7),
-        "Izabal": (7.5, 8.7),
-        "Petén": (6.8, 10),
-        "Alta Verapaz": (5.3, 9.2),
-        "Baja Verapaz": (4.5, 8.5),
-        "Quiché": (3.3, 9.1),
-        "Huehuetenango": (2.2, 9),
-        "San Marcos": (1.2, 7.7),
-        "Quetzaltenango": (2.3, 7),
-        "Totonicapán": (2.7, 7.7),
-        "Sololá": (3.1, 7.2),
-        "Retalhuleu": (2.5, 6),
-        "Suchitepéquez": (3.1, 6.3)
+            "guatemala": (4.4, 7.0),
+            "chimaltenango": (3.7, 6.8),
+            "sacatepequez": (3.8, 6.3),
+            "escuintla": (3.5, 5.5),
+            "santa rosa": (4.5, 5.7),
+            "jutiapa": (5.7, 5.8),
+            "chiquimula": (6.8, 6.7),
+            "jalapa": (5.5, 6.8),
+            "el progreso": (5.4, 7.7),
+            "zacapa": (6.3, 7.7),
+            "izabal": (7.4, 8.4),
+            "peten": (5.0, 10.7),
+            "alta verapaz": (4.7, 9.2),
+            "baja verapaz": (4.5, 8.0),
+            "quiche": (3.3, 8.1),
+            "huehuetenango": (2.2, 9),
+            "san marcos": (1.2, 7.7),
+            "quetzaltenango": (2.3, 7),
+            "totonicapan": (2.7, 7.7),
+            "solola": (3.1, 7.2),
+            "retalhuleu": (2.5, 6),
+            "suchitepequez": (3.1, 6.3)
         }
+
 
 
         
     
-    def graficar (self):
+    def graficar (self,nodo_a,nodo_b,ruta_nodos):
+        nodo_a=nodo_a.lower()
+        nodo_b=nodo_b.lower()
         pyplot.figure(figsize=(10, 8))#tamaño
+        #color de nodos
+        node_colors = [
+        "red" if depto.lower() == nodo_a or depto.lower() == nodo_b else self.colores[depto.lower()]
+        for depto in self.grafica.nodes
+        ]
         networkx.draw_networkx_nodes( #nodos, opciones
             G=self.grafica, pos=self.posiciones, node_size=500,
-            node_color=[self.colores[depto] for depto in self.grafica.nodes]
+            node_color=node_colors
         )
+
         labels = networkx.get_edge_attributes(
             self.grafica, "weight"
             )
         networkx.draw_networkx_edge_labels(#etiqueta
             self.grafica, pos=self.posiciones, edge_labels=labels,font_size=7
             )
+        #color de ramas
+        edge_colors = [
+        "red" if (u in ruta_nodos and v in ruta_nodos) else "black"
+        for u, v in self.grafica.edges
+         ]
         networkx.draw_networkx_edges(
-            self.grafica, pos=self.posiciones, width=1.5
+            self.grafica, pos=self.posiciones, width=1.5,edge_color=edge_colors
             )
         networkx.draw_networkx_labels(
             self.grafica, pos=self.posiciones, font_size=9, font_color="black"
@@ -82,11 +96,14 @@ class Grafica():
         pyplot.title("Grafo de Guatemala")
         pyplot.show()#se muestra la grafo
     
-    def agregar_nodo(self,id):#nuevo nodo
+    def agregar_nodo(self,id:str):#nuevo nodo
+        id = id.lower()
         if id not in self.nodos:
             self.nodos[id]= Nodo.Nodo(id)#arreglo de objetos nodo
     
-    def agregar_rama(self,nodo_A,nodo_B,peso):
+    def agregar_rama(self,nodo_A:str,nodo_B:str,peso):
+        nodo_A=nodo_A.lower()
+        nodo_B=nodo_B.lower()
         if nodo_A in self.nodos and nodo_B in self.nodos:#conexion de objetos
             self.nodos[nodo_A].agregar_veciono(nodo_B,peso)
             self.nodos[nodo_B].agregar_veciono(nodo_A,peso)
@@ -95,6 +112,7 @@ class Grafica():
             self.grafica.add_edge(nodo_A,nodo_B,weight=peso)#conexion de nodos en la grafica
             
     def obtener_camino(self,nodo_B):
+        nodo_B=nodo_B.lower()
         camino=[]
         actual=nodo_B
         while(actual != None):
@@ -114,6 +132,7 @@ class Grafica():
             return n
             
     def dijkstra(self,nodo_A):
+        nodo_A=nodo_A.lower()
         if nodo_A in self.nodos:
             self.nodos[nodo_A].distancia = 0
             actual = nodo_A
@@ -140,11 +159,13 @@ class Grafica():
             return False
     
     def recorrer_grafo(self,nodo_A,nodo_B):
+        nodo_A=nodo_A.lower()
+        nodo_B=nodo_B.lower()
         self.dijkstra(nodo_A)
         camino = self.obtener_camino(nodo_B)
-        print("Camino mas corto para llegar del punto A, al punto B",camino[0])
+        print(f"Camino mas corto para llegar {nodo_A} a {nodo_B} es: ",camino[0])
         print("Kilometros a recorrer",camino[1],"km")
-        self.graficar()
+        self.graficar(nodo_A,nodo_B,camino[0])
         
     
     
