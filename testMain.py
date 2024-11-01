@@ -125,6 +125,9 @@ grafo.agregar_rama("Zacapa", "el Progreso", 40)
 deparamentoSalida = str(input("Ingrese el departamento de salida: "))
 departamentoLlegada = str(input("Ingrese el departamento de llegada: "))
 
+#deparamentoSalida = "santa rosa"
+#departamentoLlegada = "peten"
+
 try:
     grafo.recorrer_grafo(deparamentoSalida, departamentoLlegada)
 except Exception as e:
